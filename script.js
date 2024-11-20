@@ -1,15 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById('actionButton');
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.querySelector('.color-button');
 
-    button.addEventListener('click', () => {
-        // Добавляем класс "disabled"
-        button.classList.add('disabled');
-        button.disabled = true;
-
-        // Удаляем класс через 3 секунды
+    button.addEventListener('click', function() {
+        button.classList.add('gray');
+        
         setTimeout(() => {
-            button.classList.remove('disabled');
-            button.disabled = false;
-        }, 3000);
+            button.classList.remove('gray');
+        }, 2000); // 2000 миллисекунд = 2 секунды
     });
 });
