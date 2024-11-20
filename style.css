@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фон с картинкой</title>
+    <style>
+        body {
+            background-image: url('background.png');
+            background-size: cover; /* Изображение масштабируется по размеру окна */
+            background-repeat: no-repeat; /* Изображение не повторяется */
+            background-position: center; /* Центрирование изображения */
+        }
+    </style>
+</head>
+<body>
+    <h1>Пример с фоновым изображением</h1>
+</body>
+</html>
