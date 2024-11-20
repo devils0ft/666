@@ -1,15 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="styles.css">
+<html lang="ru">
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>devilsoft</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ВЫДАТЬ СИГНАЛ</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button {
+            background-color: red;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            top: 20%; /* с небольшим отступом ниже середины */
+        }
+    </style>
 </head>
-<body style="background-image: url('background.png'); background-size: cover; background-repeat: no-repeat;">
-    <div class="container">
-        <button class="center-button">ВЫДАТЬ СИГНАЛ</button>
-    </div>
+<body style="background-image: url('backgroung.png'); background-size: cover; background-repeat: no-repeat;">
+    <button class="button" onclick="changeColor(this)">Нажми меня</button>
+
+    <script>
+        function changeColor(button) {
+            button.style.backgroundColor = 'gray';
+            setTimeout(() => {
+                button.style.backgroundColor = 'red';
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
