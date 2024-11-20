@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.getElementById('rotateButton').addEventListener('click', function() {
+document.getElementById('actionButton').addEventListener('click', function() {
     // Сначала случайным образом выберем одну картинку
     const images = document.querySelectorAll('.image');
     const randomIndex = Math.floor(Math.random() * images.length);
