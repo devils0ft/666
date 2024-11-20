@@ -1,47 +1,18 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-        img {
-            height: auto;   /* Сохраняет пропорции */
-        }
-    </style>
-    <title>ddsss</title>
+    <title>Responsive Image</title>
     <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .button {
-            background-color: red;
-            color: white;
-            padding: 15px 30px;
-            font-size: 20px;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            top: 20%; /* с небольшим отступом ниже середины */
+        img {
+            max-width: 100%; /* Изображение не выходит за пределы контейнера */
+            height: auto;   /* Сохраняет пропорции */
         }
     </style>
 </head>
 <body>
-  <img src="background.png" alt="description_of_image">
-    <button class="button" onclick="changeColor(this)">Нажми меня</button>
-
-    <script>
-        function changeColor(button) {
-            button.style.backgroundColor = 'gray';
-            setTimeout(() => {
-                button.style.backgroundColor = 'red';
-            }, 3000);
-        }
-    </script>
-
-    
+    <h1>Мое изображение</h1>
+    <img src="background.png" alt="Описание изображения">
 </body>
 </html>
