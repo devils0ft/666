@@ -6,6 +6,7 @@ body, html {
     align-items: center;
     justify-content: center;
     background-color: #f0f0f0;
+    
 }
 
 .container {
@@ -31,4 +32,16 @@ body, html {
 
 .color-button.gray {
     background-color: gray;
+}
+
+#image1 {
+    left: 0;
+}
+
+#image2 {
+    left: 120px;
+}
+
+#image3 {
+    left: 240px;
 }
