@@ -1,0 +1,193 @@
+/* Общий стиль для страницы */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* Черный фон */
+}
+
+/* Контейнер */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('Untitled-1-Recovered.png') no-repeat center center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Контейнер для изображений */
+.image-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для изображений */
+.image-container img {
+    width: 100px;
+    height: 100px; /* Делаем изображения квадратными */
+    border-radius: 50%; /* Круглые изображения */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: margin-top 0.3s ease, filter 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+/* Анимация для кнопки */
+.color-button {
+    margin-top: 130px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f50202;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: fireEffect 1.5s infinite ease-in-out;
+    transition: background-color 0.3s ease;
+}
+
+.color-button:hover {
+    background-color: #4d0101;
+}
+
+/* Огненная анимация для кнопки */
+@keyframes fireEffect {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 69, 0, 0.6), 0 0 20px rgba(255, 140, 0, 0.5);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 69, 0, 0.8), 0 0 40px rgba(255, 69, 0, 0.6);
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 69, 0, 0.6), 0 0 20px rgba(255, 140, 0, 0.5);
+        transform: scale(1);
+    }
+}
+
+/* Огненная анимация для изображений */
+@keyframes orangeFireEffect {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.4), 0 0 20px rgba(255, 200, 0, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 165, 0, 0.7), 0 0 40px rgba(255, 165, 0, 0.5);
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.4), 0 0 20px rgba(255, 200, 0, 0.3);
+        transform: scale(1);
+    }
+}
+
+/* Применение анимации для изображений */
+.img1, .img2, .img3 {
+    position: relative; /* Для использования псевдоэлемента */
+    animation: orangeFireEffect 2s infinite ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Огненная анимация для кругового фона */
+.img1::before, .img2::before, .img3::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%; /* Размер круга (чуть больше картинки) */
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 165, 0, 0.4), rgba(255, 140, 0, 0));
+    border-radius: 50%; /* Круговая форма */
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Помещаем анимацию позади картинки */
+    animation: orangeFireEffect 2s infinite ease-in-out;
+}
+
+.final-highlight {
+    margin-top: -70px; /* Поднимаем изображение */
+    filter: hue-rotate(0deg) brightness(1.5) saturate(3); /* Интенсивность цвета */
+    transition: all 0.5s ease; /* Плавный переход */
+    position: relative; /* Чтобы привязать псевдоэлемент */
+    z-index: 1; /* Над другими элементами */
+}
+
+/* Псевдоэлемент для эффекта огня */
+.final-highlight::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%; /* Радиус круга больше изображения */
+    height: 200%;
+    border-radius: 50%; /* Круглый эффект */
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.7), rgba(255, 69, 0, 0.4), rgba(255, 140, 0, 0));
+    box-shadow: 
+        0 0 20px rgba(255, 0, 0, 0.8), 
+        0 0 40px rgba(255, 69, 0, 0.6), 
+        0 0 60px rgba(255, 140, 0, 0.4); /* Огненное свечение */
+    animation: none; /* Останавливаем текущие анимации */
+    z-index: -1; /* Помещаем свечение позади картинки */
+}
+
+/* Затемнение фона */
+.darkened {
+    background-color: rgba(0, 0, 0, 0.9); /* Затемнённый фон */
+    transition: background-color 0.5s ease; /* Плавный переход */
+}
+
+/* Остановка анимаций */
+.container.darkened .image-container img:not(.img3),
+.container.darkened .color-button {
+    animation: none; /* Останавливаем все анимации */
+    filter: grayscale(100%) brightness(0.3); /* Затемнение картинок */
+    transition: filter 0.5s ease; /* Плавный эффект затухания */
+}
+
+/* Оставляем анимацию favicon.ico */
+.img3 {
+    z-index: 2; /* Помещаем поверх затемнённого фона */
+}
+
+/* Статический эффект огня */
+.static-fire::before {
+    background: radial-gradient(circle, rgba(255, 165, 0, 0.7), rgba(255, 140, 0, 0));
+    animation: none; /* Убираем анимацию */
+}
+
+/* Затемнённый фон */
+.container.darkened {
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: background-color 1s ease;
+}
+
+
+
+/* Светло-серый эффект огня */
+.light-gray-fire::before {
+    background: radial-gradient(circle, rgba(192, 192, 192, 0.7), rgba(128, 128, 128, 0.4));
+    animation: none; /* Убираем анимацию */
+}
+
+
+/* Ускоренная анимация для изображений */
+.img1, .img2, .img3 {
+    position: relative;
+    animation: orangeFireEffect 1.7s infinite ease-in-out; /* Уменьшена длительность до 1 секунды */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
