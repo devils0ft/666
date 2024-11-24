@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d3v1ls0ft</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="brawl-soft">
+        BRAWL SOFT
+    </div>
+    <div class="input-section">
+        <input type="text" id="user-input" placeholder="Введите текст...">
+        <button id="confirm-button">Подтвердить</button>
+    </div>
+    <div id="message" class="hidden">ыыы</div>
+    
+    <div class="container">
+        <div class="image-container" id="container1">
+            <img src="image1.jpg" alt="Image 1" class="img1">
+            <img src="image2.jpg" alt="Image 2" class="img2">
+            <img src="image3.jpg" alt="Image 3" class="img3">
+        </div>
+        <button class="color-button" onclick="sex()">ВЫДАТЬ СИГНАЛ</button>
+        <button id="reset-button">Сбросить</button>
+
+    </div>
+    
+    <script src="script.js"></script>
+
+    <!-- Добавьте элементы audio -->
+    <audio id="start-sound" src="start.mp3" preload="auto"></audio>
+    <audio id="win-sound" src="win.mp3" preload="auto"></audio>
+</body>
+</html>
